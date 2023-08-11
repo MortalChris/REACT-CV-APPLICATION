@@ -1,7 +1,16 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+
+  const submit = () => {
+    console.log("this works");
+    //hide inputs
+    //display value of inputs
+    //hide submit button
+    //display edit button
+  };
+
   return (
     <>
       <form>
@@ -48,7 +57,7 @@ function App() {
 
 
         <div id="button-container">
-          <button onSubmit="" >Submit</button>
+          <input onClick={submit} type="button" value="Submit" id="submit"/>
         </div>
       </form>
     </>
