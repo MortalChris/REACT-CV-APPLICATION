@@ -1,33 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { useState } from 'react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <form>
+        <div id="general-information-container">
+            <input placeholder="First name" type="text" name="first-name" id="first-name-input" />
+            <input placeholder="Last name" type="text" name="last-name" id="last-name-input" />
+
+            <input placeholder="Email" type="email" name="email" id="email-input" />
+            <input placeholder="Phone" type="text" name="phone-number" id="phone-input" />
+        </div>
+
+        <div id="Summary-input-container">
+            <input placeholder="Summary" type="text" name="summary" id="summary-input" />
+        </div>
+
+        <div id="education-information">
+            <input placeholder="School" type="text" name="school-name" id="school-input" />
+            <input placeholder="Degree" type="text" name="degree" id="degree-input" />
+
+            <input placeholder="Date Start" type="date" name="date-of-start" id="education-date-start-input" />
+            <input placeholder="Date End" type="date" name="date-of-end" id="education-date-end-input" />
+        </div>
+
+        <div id="experience-information">
+            <input placeholder="Company" type="text" name="company-name" id="company-input" />
+            <input placeholder="Position" type="text" name="position-title" id="position-input" />
+            <input placeholder="Responsibility" type="text" name="responsibilities" id="resp-input" />
+
+            <input placeholder="Date Start" type="date" name="date-of-start" id="experience-date-start-input" />
+            <input placeholder="Date End" type="date" name="date-of-end" id="experience-date-end-input" />
+        </div>
+        <div id="button-container">
+          <button onSubmit="" >Submit</button>
+        </div>
+      </form>
     </>
   )
 }
