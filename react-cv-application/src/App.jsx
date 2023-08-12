@@ -1,13 +1,41 @@
 import { useState } from 'react';
+import { useEffect } from 'react';
 import './App.css';
 
 function App() {
   const [active, setActive] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [submittedData, setSubmittedData] = useState(null);
 
-  const submit = () => {
-    // setDisplay("display");
+  useEffect(() => {
+    console.log(submittedData?.firstName + " " + submittedData?.lastName);
+  }, [submittedData]);
+
+  const buttonClick = (e) => {
+    e.preventDefault();
     setActive(!active);
-    console.log("this works");
+    if (!active) {
+      console.log("clicked edit button.");
+    } else {
+      console.log("clicked submit");
+      setSubmittedData({
+        firstName: firstName,
+        lastName: lastName
+        // email: email,
+        // phone: phone,
+        // summary: summary,
+        // schoolName: schoolName,
+        // schoolDateStart: schoolDateStart,
+        // schoolDateEnd: schoolDateEnd,
+        // degree: degree,
+        // company: company,
+        // companyDateStart: companyDateStart,
+        // companyDateEnd: companyDateEnd,
+        // position: position,
+        // responsibilities: responsibilities
+      })
+    }
     //hide inputs
     //display value of inputs
     //hide submit button
@@ -20,8 +48,8 @@ function App() {
         <div id="general-information-container">
           <label>General Info</label>
           <br />
-            <input placeholder="First name" type="text" name="first-name" id="first-name-input" />
-            <input placeholder="Last name" type="text" name="last-name" id="last-name-input" />
+          <input placeholder="First name" type="text" value={firstName} id="first-name-input" onChange={(e) => setFirstName(e.target.value)}/>
+          <input placeholder="Last name" type="text" value={lastName} id="last-name-input" onChange={(e) => setLastName(e.target.value)}/>
           <br />
             <input placeholder="Email" type="email" name="email" id="email-input" />
             <input placeholder="Phone" type="number" name="phone-number" id="phone-input" />
@@ -60,8 +88,8 @@ function App() {
 
 
         <div id="button-container">
-          <input onClick={submit} className={active ? "show-btn" : "hide-btn"} type="button" value="Submit" id="submit-btn" />
-          <input onClick={submit} className={active ? "hide-btn" : "show-btn"} type="button" value="Edit" id="edit-btn"/>
+          <input onClick={buttonClick} className={active ? "show-btn" : "hide-btn"} type="submit" value="Submit" id="submit-btn" />
+          <input onClick={buttonClick} className={active ? "hide-btn" : "show-btn"} type="button" value="Edit" id="edit-btn"/>
         </div>
       </form>
     </>
