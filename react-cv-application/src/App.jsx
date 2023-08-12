@@ -105,6 +105,13 @@ function App() {
           <input onClick={buttonClick} className={active ? "hide-btn" : "show-btn"} type="button" value="Edit" id="edit-btn"/>
         </div>
       </form>
+
+
+      {submittedData && (
+        <div>
+          {/* Put stuff here */}
+        </div>  
+      )}
     </>
   )
 }
