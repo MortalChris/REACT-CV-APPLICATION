@@ -6,10 +6,23 @@ function App() {
   const [active, setActive] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [summary, setSummary] = useState("");
+  const [schoolName, setSchoolName] = useState("");
+  const [schoolDateStart, setSchoolDateStart] = useState("");
+  const [schoolDateEnd, setSchoolDateEnd] = useState("");
+  const [degree, setDegree] = useState("");
+  const [company, setCompany] = useState("");
+  const [companyDateStart, setCompanyDateStart] = useState("");
+  const [companyDateEnd, setCompanyDateEnd] = useState("");
+  const [position, setPosition] = useState("");
+  const [responsibilities, setResponsibilities] = useState("");
+
   const [submittedData, setSubmittedData] = useState(null);
 
   useEffect(() => {
-    console.log(submittedData?.firstName + " " + submittedData?.lastName);
+    console.log(submittedData);
   }, [submittedData]);
 
   const buttonClick = (e) => {
@@ -21,19 +34,19 @@ function App() {
       console.log("clicked submit");
       setSubmittedData({
         firstName: firstName,
-        lastName: lastName
-        // email: email,
-        // phone: phone,
-        // summary: summary,
-        // schoolName: schoolName,
-        // schoolDateStart: schoolDateStart,
-        // schoolDateEnd: schoolDateEnd,
-        // degree: degree,
-        // company: company,
-        // companyDateStart: companyDateStart,
-        // companyDateEnd: companyDateEnd,
-        // position: position,
-        // responsibilities: responsibilities
+        lastName: lastName,
+        email: email,
+        phone: phone,
+        summary: summary,
+        schoolName: schoolName,
+        schoolDateStart: schoolDateStart,
+        schoolDateEnd: schoolDateEnd,
+        degree: degree,
+        company: company,
+        companyDateStart: companyDateStart,
+        companyDateEnd: companyDateEnd,
+        position: position,
+        responsibilities: responsibilities
       })
     }
     //hide inputs
@@ -51,39 +64,39 @@ function App() {
           <input placeholder="First name" type="text" value={firstName} id="first-name-input" onChange={(e) => setFirstName(e.target.value)}/>
           <input placeholder="Last name" type="text" value={lastName} id="last-name-input" onChange={(e) => setLastName(e.target.value)}/>
           <br />
-            <input placeholder="Email" type="email" name="email" id="email-input" />
-            <input placeholder="Phone" type="number" name="phone-number" id="phone-input" />
+            <input placeholder="Email" type="email" id="email-input" onChange={(e) => setEmail(e.target.value)}/>
+            <input placeholder="Phone" type="number" id="phone-input" onChange={(e) => setPhone(e.target.value)}/>
         </div>
 
         
         <div id="Summary-input-container">
           <label>Summary</label>
           <br />
-            <input placeholder="Summary" type="text" name="summary" id="summary-input" />
+            <input placeholder="Summary" type="text" id="summary-input" onChange={(e) => setSummary(e.target.value)}/>
         </div>
 
         
         <div id="education-information">
           <label>Education</label>
           <br />
-            <input placeholder="School" type="text" name="school-name" id="school-input" />
-            <input placeholder="Date Start" type="date" name="date-of-start" id="education-date-start-input" />
-            <input placeholder="Date End" type="date" name="date-of-end" id="education-date-end-input" />
+            <input placeholder="School" type="text" id="school-input" onChange={(e) => setSchoolName(e.target.value)}/>
+            <input placeholder="Date Start" type="date" id="education-date-start-input" onChange={(e) => setSchoolDateStart(e.target.value)}/>
+            <input placeholder="Date End" type="date" id="education-date-end-input" onChange={(e) => setSchoolDateEnd(e.target.value)}/>
           <br />
-            <input placeholder="Degree" type="text" name="degree" id="degree-input" />
+            <input placeholder="Degree" type="text" id="degree-input" onChange={(e) => setDegree(e.target.value)}/>
         </div>
 
         
         <div id="experience-information">
           <label>Experience</label>
           <br />
-            <input placeholder="Company" type="text" name="company-name" id="company-input" />
-            <input placeholder="Date Start" type="date" name="date-of-start" id="experience-date-start-input" />
-            <input placeholder="Date End" type="date" name="date-of-end" id="experience-date-end-input" />
+            <input placeholder="Company" type="text" id="company-input" onChange={(e) => setCompany(e.target.value)}/>
+            <input placeholder="Date Start" type="date" id="experience-date-start-input" onChange={(e) => setCompanyDateStart(e.target.value)}/>
+            <input placeholder="Date End" type="date" id="experience-date-end-input" onChange={(e) => setCompanyDateEnd(e.target.value)}/>
           <br />
-            <input placeholder="Position" type="text" name="position-title" id="position-input" />
+            <input placeholder="Position" type="text" id="position-input" onChange={(e) => setPosition(e.target.value)}/>
           <br />
-            <input placeholder="Responsibilities" type="text" name="responsibilities" id="resp-input" />
+            <input placeholder="Responsibilities" type="text" id="resp-input" onChange={(e) => setResponsibilities(e.target.value)}/>
         </div>
 
 
