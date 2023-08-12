@@ -2,8 +2,11 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [active, setActive] = useState(false);
 
   const submit = () => {
+    // setDisplay("display");
+    setActive(!active);
     console.log("this works");
     //hide inputs
     //display value of inputs
@@ -57,7 +60,8 @@ function App() {
 
 
         <div id="button-container">
-          <input onClick={submit} type="button" value="Submit" id="submit"/>
+          <input onClick={submit} className={active ? "show-btn" : "hide-btn"} type="button" value="Submit" id="submit-btn" />
+          <input onClick={submit} className={active ? "hide-btn" : "show-btn"} type="button" value="Edit" id="edit-btn"/>
         </div>
       </form>
     </>
@@ -65,3 +69,5 @@ function App() {
 }
 
 export default App
+// style={{ display: display ? "none" : "initial" }}
+// style={{ display: display ? "initial" : "none" }}
