@@ -109,7 +109,7 @@ function App() {
       <div id="cv-show">
         <div className={active ? "hide-btn" : "show-btn"}>
           <div className="general-information-container2" >
-            <label>General Info</label>
+            <h1>General Info</h1>
             <br />
               <p>{firstName}</p>
               <p>{lastName}</p>
@@ -121,14 +121,14 @@ function App() {
 
             
           <div className="summary-input-container2">
-            <label>Summary</label>
+            <h1>Summary</h1>
             <br />
               <p>{summary}</p>
           </div>
 
             
           <div className="education-information2">
-            <label>Education</label>
+            <h1>Education</h1>
             <br />
             <p>{schoolName}</p>
             <br />
@@ -139,7 +139,7 @@ function App() {
 
             
           <div className="experience-information2">
-            <label>Experience</label>
+            <h1>Experience</h1>
             <br />
               <p>{company}</p>
               <p>{companyDateStart}</p>
@@ -147,7 +147,8 @@ function App() {
             <br />
               <p>{position}</p>
             <br />
-              <p>{responsibilities}</p>
+            <h2>Responsibilities</h2>
+              <p id="responsibilities-p">{responsibilities}</p>
           </div>
         </div>
       </div>

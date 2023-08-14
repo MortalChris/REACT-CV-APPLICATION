@@ -25,11 +25,13 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+
+
 *{
   margin: 0;
   padding: 0;
   background-color: var(--clr-background);
-  text-align: center;
+
 }
 a {
   font-weight: 500;
@@ -46,6 +48,7 @@ a:hover {
   display: flex;
   place-items: center;
   background-color: var(--clr-background);
+  text-align: center;
 }
 
 label{
@@ -104,9 +107,17 @@ input{
 /* Section for after pressing submit */
 #cv-show{
   background-color: var(--clr-primary);
-  margin-left: 15rem;
-  margin-right: 15rem;
+  margin-left: 18rem;
+  margin-right: 18rem;
   display: flex;
+  text-align: start;
+}
+#cv-show h1{
+  color: var(--clr-accent);
+}
+#cv-show h2{
+  color: var(--clr-accent);
+  margin-bottom: .5rem;
 }
 #cv-show p{
   padding-left: .2rem;
@@ -115,10 +126,8 @@ input{
   margin-bottom: 1rem;
 }
 p{
-  color: var(--clr-text)
+  color: var(--clr-text);
 }
-
-
 /* 
 @media (prefers-color-scheme: light) {
   :root {
