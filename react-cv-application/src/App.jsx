@@ -49,16 +49,12 @@ function App() {
         responsibilities: responsibilities
       })
     }
-    //hide inputs
-    //display value of inputs
-    //hide submit button
-    //display edit button
   };
 
   return (
     <>
       <form >
-        <div className={active ? "show-btn" : "hide-btn"}>
+        <div id="inner-form-container" className={active ? "show-btn" : "hide-btn"}>
           <div className="general-information-container" >
             <label>General Info</label>
             <br />
@@ -70,7 +66,7 @@ function App() {
           </div>
 
           
-          <div className="Summary-input-container">
+          <div className="summary-input-container">
             <label>Summary</label>
             <br />
               <input placeholder="Summary" type="text" id="summary-input" onChange={(e) => setSummary(e.target.value)}/>
@@ -101,58 +97,63 @@ function App() {
           </div>
         </div>
 
-        <div id="button-container">
-          <input onClick={buttonClick} className={active ? "show-btn" : "hide-btn"} type="submit" value="Submit" id="submit-btn" />
-          <input onClick={buttonClick} className={active ? "hide-btn" : "show-btn"} type="button" value="Edit" id="edit-btn"/>
+        <div className="button-container">
+          <input onClick={buttonClick} className={active ? "show-btn" : "hide-btn"} type="submit" value="SUBMIT" id="submit-btn" />
+
         </div>
       </form>
 
 
 
 
+      <div id="cv-show">
+        <div className={active ? "hide-btn" : "show-btn"}>
+          <div className="general-information-container2" >
+            <label>General Info</label>
+            <br />
+              <p>{firstName}</p>
+              <p>{lastName}</p>
+            <br />
+              <p>{email}</p>
+              <p>{phone}</p>
+            <br />
+          </div>
 
-      <div className={active ? "hide-btn" : "show-btn"}>
-        <div className="general-information-container" >
-          <label>General Info</label>
-          <br />
-            <p>{firstName}</p>
-            <p>{lastName}</p>
-            <p>{email}</p>
-            <p>{phone}</p>
-          <br />
-        </div>
+            
+          <div className="summary-input-container2">
+            <label>Summary</label>
+            <br />
+              <p>{summary}</p>
+          </div>
 
-          
-        <div className="Summary-input-container">
-          <label>Summary</label>
-          <br />
-            <p>{summary}</p>
-        </div>
-
-          
-        <div className="education-information">
-          <label>Education</label>
-          <br />
+            
+          <div className="education-information2">
+            <label>Education</label>
+            <br />
             <p>{schoolName}</p>
-            <p>{schoolDateStart}</p>
-            <p>{schoolDateEnd}</p>
-          <br />
-            <p>{degree}</p>
-        </div>
+            <br />
+              <p>{degree}</p>
+              <p>{schoolDateStart}</p>
+              <p>{schoolDateEnd}</p>
+          </div>
 
-          
-        <div className="experience-information">
-          <label>Experience</label>
-          <br />
-            <p>{company}</p>
-            <p>{companyDateStart}</p>
-            <p>{companyDateEnd}</p>
-          <br />
-            <p>{position}</p>
-          <br />
-            <p>{responsibilities}</p>
+            
+          <div className="experience-information2">
+            <label>Experience</label>
+            <br />
+              <p>{company}</p>
+              <p>{companyDateStart}</p>
+              <p>{companyDateEnd}</p>
+            <br />
+              <p>{position}</p>
+            <br />
+              <p>{responsibilities}</p>
+          </div>
         </div>
       </div>
+      <div className="button-container">
+          <input onClick={buttonClick} className={active ? "hide-btn" : "show-btn"} type="button" value="EDIT" id="edit-btn" />
+        </div>
     </>
   )
 }
