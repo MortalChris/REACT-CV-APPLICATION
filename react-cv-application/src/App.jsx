@@ -59,7 +59,7 @@ function App() {
     <>
       <form >
         <div className={active ? "show-btn" : "hide-btn"}>
-          <div id="general-information-container" >
+          <div className="general-information-container" >
             <label>General Info</label>
             <br />
             <input placeholder="First name" type="text" value={firstName} id="first-name-input" onChange={(e) => setFirstName(e.target.value)}/>
@@ -70,14 +70,14 @@ function App() {
           </div>
 
           
-          <div id="Summary-input-container">
+          <div className="Summary-input-container">
             <label>Summary</label>
             <br />
               <input placeholder="Summary" type="text" id="summary-input" onChange={(e) => setSummary(e.target.value)}/>
           </div>
 
           
-          <div id="education-information">
+          <div className="education-information">
             <label>Education</label>
             <br />
               <input placeholder="School" type="text" id="school-input" onChange={(e) => setSchoolName(e.target.value)}/>
@@ -88,7 +88,7 @@ function App() {
           </div>
 
           
-          <div id="experience-information">
+          <div className="experience-information">
             <label>Experience</label>
             <br />
               <input placeholder="Company" type="text" id="company-input" onChange={(e) => setCompany(e.target.value)}/>
@@ -107,8 +107,51 @@ function App() {
         </div>
       </form>
 
+
+
+
+
       <div className={active ? "hide-btn" : "show-btn"}>
-        
+        <div className="general-information-container" >
+          <label>General Info</label>
+          <br />
+            <p>{firstName}</p>
+            <p>{lastName}</p>
+            <p>{email}</p>
+            <p>{phone}</p>
+          <br />
+        </div>
+
+          
+        <div className="Summary-input-container">
+          <label>Summary</label>
+          <br />
+            <p>{summary}</p>
+        </div>
+
+          
+        <div className="education-information">
+          <label>Education</label>
+          <br />
+            <p>{schoolName}</p>
+            <p>{schoolDateStart}</p>
+            <p>{schoolDateEnd}</p>
+          <br />
+            <p>{degree}</p>
+        </div>
+
+          
+        <div className="experience-information">
+          <label>Experience</label>
+          <br />
+            <p>{company}</p>
+            <p>{companyDateStart}</p>
+            <p>{companyDateEnd}</p>
+          <br />
+            <p>{position}</p>
+          <br />
+            <p>{responsibilities}</p>
+        </div>
       </div>
     </>
   )
