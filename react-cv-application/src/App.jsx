@@ -57,48 +57,49 @@ function App() {
 
   return (
     <>
-      <form>
-        <div id="general-information-container">
-          <label>General Info</label>
-          <br />
-          <input placeholder="First name" type="text" value={firstName} id="first-name-input" onChange={(e) => setFirstName(e.target.value)}/>
-          <input placeholder="Last name" type="text" value={lastName} id="last-name-input" onChange={(e) => setLastName(e.target.value)}/>
-          <br />
-            <input placeholder="Email" type="email" id="email-input" onChange={(e) => setEmail(e.target.value)}/>
-            <input placeholder="Phone" type="number" id="phone-input" onChange={(e) => setPhone(e.target.value)}/>
-        </div>
+      <form >
+        <div className={active ? "show-btn" : "hide-btn"}>
+          <div id="general-information-container" >
+            <label>General Info</label>
+            <br />
+            <input placeholder="First name" type="text" value={firstName} id="first-name-input" onChange={(e) => setFirstName(e.target.value)}/>
+            <input placeholder="Last name" type="text" value={lastName} id="last-name-input" onChange={(e) => setLastName(e.target.value)}/>
+            <br />
+              <input placeholder="Email" type="email" id="email-input" onChange={(e) => setEmail(e.target.value)}/>
+              <input placeholder="Phone" type="number" id="phone-input" onChange={(e) => setPhone(e.target.value)}/>
+          </div>
 
-        
-        <div id="Summary-input-container">
-          <label>Summary</label>
-          <br />
-            <input placeholder="Summary" type="text" id="summary-input" onChange={(e) => setSummary(e.target.value)}/>
-        </div>
+          
+          <div id="Summary-input-container">
+            <label>Summary</label>
+            <br />
+              <input placeholder="Summary" type="text" id="summary-input" onChange={(e) => setSummary(e.target.value)}/>
+          </div>
 
-        
-        <div id="education-information">
-          <label>Education</label>
-          <br />
-            <input placeholder="School" type="text" id="school-input" onChange={(e) => setSchoolName(e.target.value)}/>
-            <input placeholder="Date Start" type="date" id="education-date-start-input" onChange={(e) => setSchoolDateStart(e.target.value)}/>
-            <input placeholder="Date End" type="date" id="education-date-end-input" onChange={(e) => setSchoolDateEnd(e.target.value)}/>
-          <br />
-            <input placeholder="Degree" type="text" id="degree-input" onChange={(e) => setDegree(e.target.value)}/>
-        </div>
+          
+          <div id="education-information">
+            <label>Education</label>
+            <br />
+              <input placeholder="School" type="text" id="school-input" onChange={(e) => setSchoolName(e.target.value)}/>
+              <input placeholder="Date Start" type="date" id="education-date-start-input" onChange={(e) => setSchoolDateStart(e.target.value)}/>
+              <input placeholder="Date End" type="date" id="education-date-end-input" onChange={(e) => setSchoolDateEnd(e.target.value)}/>
+            <br />
+              <input placeholder="Degree" type="text" id="degree-input" onChange={(e) => setDegree(e.target.value)}/>
+          </div>
 
-        
-        <div id="experience-information">
-          <label>Experience</label>
-          <br />
-            <input placeholder="Company" type="text" id="company-input" onChange={(e) => setCompany(e.target.value)}/>
-            <input placeholder="Date Start" type="date" id="experience-date-start-input" onChange={(e) => setCompanyDateStart(e.target.value)}/>
-            <input placeholder="Date End" type="date" id="experience-date-end-input" onChange={(e) => setCompanyDateEnd(e.target.value)}/>
-          <br />
-            <input placeholder="Position" type="text" id="position-input" onChange={(e) => setPosition(e.target.value)}/>
-          <br />
-            <input placeholder="Responsibilities" type="text" id="resp-input" onChange={(e) => setResponsibilities(e.target.value)}/>
+          
+          <div id="experience-information">
+            <label>Experience</label>
+            <br />
+              <input placeholder="Company" type="text" id="company-input" onChange={(e) => setCompany(e.target.value)}/>
+              <input placeholder="Date Start" type="date" id="experience-date-start-input" onChange={(e) => setCompanyDateStart(e.target.value)}/>
+              <input placeholder="Date End" type="date" id="experience-date-end-input" onChange={(e) => setCompanyDateEnd(e.target.value)}/>
+            <br />
+              <input placeholder="Position" type="text" id="position-input" onChange={(e) => setPosition(e.target.value)}/>
+            <br />
+              <input placeholder="Responsibilities" type="text" id="resp-input" onChange={(e) => setResponsibilities(e.target.value)}/>
+          </div>
         </div>
-
 
         <div id="button-container">
           <input onClick={buttonClick} className={active ? "show-btn" : "hide-btn"} type="submit" value="Submit" id="submit-btn" />
@@ -106,12 +107,9 @@ function App() {
         </div>
       </form>
 
-
-      {submittedData && (
-        <div>
-          {/* Put stuff here */}
-        </div>  
-      )}
+      <div className={active ? "hide-btn" : "show-btn"}>
+        
+      </div>
     </>
   )
 }
